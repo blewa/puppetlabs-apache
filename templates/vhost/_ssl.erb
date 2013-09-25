@@ -25,9 +25,6 @@
 <% if @ssl_protocol -%>
   SSLProtocol             <%= Array(@ssl_protocol.join(' ')) %>
 <% end -%>
-<% if @ssl_cipher_suite -%>
-  SSLCipherSuite          <%= @ssl_cipher_suite %>
-<% end -%>
 <% if @ssl_verify_client -%>
   SSLVerifyClient         <%= @ssl_verify_client %>
 <% end -%>
@@ -36,6 +33,9 @@
 <% end -%>
 <% if @ssl_options -%>
   SSLOptions              <%= Array(@ssl_options.join(' ')) %>
+<% end -%>
+<% if @ssl_chiper -%>
+  SSLCipherSuite        <%= @ssl_cipher %>
 <% end -%>
   <FilesMatch "\.(cgi|shtml|phtml|php)$">
     SSLOptions +StdEnvVars
