@@ -75,6 +75,11 @@ define apache::vhost(
     $ssl_crl_path                = $apache::default_ssl_crl_path,
     $ssl_crl                     = $apache::default_ssl_crl,
     $ssl_certs_dir               = $apache::params::ssl_certs_dir,
+    $ssl_protocol                = $apache::default_ssl_protocol,
+    $ssl_cipher_suite            = $apache::default_ssl_cipher_suite,
+    $ssl_verify_client           = $apache::default_ssl_verify_client,
+    $ssl_verify_depth            = $apache::default_ssl_verify_depth,
+    $ssl_options                 = $apache::default_ssl_options,
     $priority                    = undef,
     $default_vhost               = false,
     $servername                  = $name,
@@ -374,6 +379,11 @@ define apache::vhost(
   #   - $ssl_ca
   #   - $ssl_crl
   #   - $ssl_crl_path
+  #   - $ssl_protocol
+  #   - $ssl_cipher_suite
+  #   - $ssl_verify_client
+  #   - $ssl_verify_depth
+  #   - $ssl_options
   # suphp fragment:
   #   - $suphp_addhandler
   #   - $suphp_engine
